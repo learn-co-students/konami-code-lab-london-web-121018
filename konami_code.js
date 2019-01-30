@@ -11,6 +11,25 @@ const codes = [
   "a"
 ];
 
-function init() {
+
+function init(e) {
   // your code here
+  let index = 0
+
+  function pressedKey(event) {
+    const key = event.key;
+
+    if (key === codes[index]) {
+      index++;
+
+      if (index === codes.length) {
+        alert("Congratulations you bellend!");
+
+        index = 0;
+      }
+    } else {
+      index = 0;
+    }
+  }
+  document.body.addEventListener('keydown', pressedKey)
 }
